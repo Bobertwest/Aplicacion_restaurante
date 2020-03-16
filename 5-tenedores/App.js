@@ -1,10 +1,15 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, Text, View, Button } from "react-native";
+import Loading from "./Loading.js";
 
 export default function App() {
+  const [isLoading, setLoading] = useState(false);
+
   return (
     <View style={styles.container}>
-      <Text>mi rimera app</Text>
+      <Text>hola mundo</Text>
+      {isLoading === true && <Loading />}
+      <Button title="Actualizar" onPress={() => setLoading(true)}></Button>
     </View>
   );
 }
@@ -12,7 +17,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center"
   }
